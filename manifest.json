@@ -1,0 +1,10 @@
+{
+  "name": "aoiygw",
+  "id": "1020363673970897632",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": [
+    "figma"
+  ],
+  "ui": "ui.html"
+}
