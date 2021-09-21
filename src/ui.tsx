@@ -1,5 +1,6 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
+import { Button, Text, Title } from 'react-figma-plugin-ds'
 import './ui.scss'
 
 declare function require(path: string): any
@@ -23,13 +24,32 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <img src={require('./logo.svg')} />
-        <h2>Place Aoi Yagawa</h2>
-        <p>Count: <input ref={this.countRef} /></p>
-        <button id="create" onClick={this.onCreate}>Create</button>
-        <button onClick={this.onCancel}>Cancel</button>
-      </div>
+      <>
+        <Title
+          level='h1'
+          size='large'
+        >
+          Place Aoi Yagawa
+        </Title>
+        <Text
+          weight="medium"
+        >
+          Count:
+        </Text>
+        <input ref={this.countRef} />
+        <Button
+          isPrimary
+          onClick={this.onCreate}
+        >
+          Create
+        </Button>
+        <Button
+          isSecondary
+          onClick={this.onCancel}
+        >
+          Cancel
+        </Button>
+      </>
     )
   }
 }
