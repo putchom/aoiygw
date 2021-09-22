@@ -23,7 +23,7 @@ const PostImageGridView: React.VFC<Props> = (props) => {
 
   return (
     <div>
-      <ul>
+      <ul className='grid'>
         {props.posts.map(post => (
           <li key={post.id}>
             <img src={composeImageUrl(post.body)} />
