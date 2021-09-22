@@ -25,6 +25,7 @@
     "webpack-cli": "^4.8.0"
   },
   "dependencies": {
+    "@types/css-modules": "^1.0.2",
     "@types/react": "^17.0.21",
     "@types/react-dom": "^17.0.9",
     "figma-plugin-ds": "^1.0.1",

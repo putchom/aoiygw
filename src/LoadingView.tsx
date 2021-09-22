@@ -1,5 +1,4 @@
 import * as React from 'react'
-import './ui.scss'
 
 const LoadingView: React.VFC = () => {
   return (

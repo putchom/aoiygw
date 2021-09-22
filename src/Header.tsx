@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { Title } from 'react-figma-plugin-ds'
-import './ui.scss'
 
 const Header: React.VFC = () => {
   return (

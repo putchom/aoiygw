@@ -1,6 +1,6 @@
 import * as React from 'react'
 import Masonry from 'react-masonry-css'
-import './ui.scss'
+import styles from './PostImageGridView.module.scss'
 
 interface Post {
   id: string
@@ -23,15 +23,18 @@ const PostImageGridView: React.VFC<Props> = (props) => {
   }
 
   return (
-    <div className='container'>
+    <div className={styles.container}>
       <Masonry
         breakpointCols={2}
-        className='grid'
-        columnClassName='grid__column'
+        className={styles.grid}
+        columnClassName={styles.column}
       >
         {props.posts.map(post => (
           <div key={post.id}>
-            <img className='grid__image' src={composeImageUrl(post.body)} />
+            <img
+              className={styles.image}
+              src={composeImageUrl(post.body)}
+            />
           </div>
         ))}
       </Masonry>

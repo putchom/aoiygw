@@ -1,5 +1,4 @@
 import * as React from 'react'
-import './ui.scss'
 
 interface Props {
   message: string
