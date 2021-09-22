@@ -17,6 +17,10 @@ module.exports = (env, argv) => ({
 
   module: {
     rules: [
+      {
+        test: /\.txt$/i,
+        use: 'raw-loader',
+      },
       // Converts TypeScript code to JavaScript
       { 
         test: /\.tsx?$/, 

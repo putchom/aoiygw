@@ -4,6 +4,7 @@ import * as ReactDOM from 'react-dom'
 import ErrorView from './views/ErrorView'
 import PostImageGridView from './views/PostImageGridView'
 import LoadingView from './views/LoadingView'
+import apiKey from './api_key.txt'
 import './ui.scss'
 
 const App: React.VFC = () => {
@@ -12,7 +13,6 @@ const App: React.VFC = () => {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
-    const apiKey = 'hoge'
     fetch(`https://api.tumblr.com/v2/blog/yagawaaoi.tumblr.com/posts?api_key=${apiKey}`)
       .then(res => res.json())
       .then(
