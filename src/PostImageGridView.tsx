@@ -11,12 +11,22 @@ interface Props {
 }
 
 const PostImageGridView: React.VFC<Props> = (props) => {
+  const composeImageUrl = (str: string) => {
+    const regex = (/(https?:\/\/[^ ]*\.(?:gif|png|jpg|jpeg))/i)
+
+    if (new RegExp(regex).test(str)) {
+      return regex.exec(str)[1]
+    } else {
+      return ''
+    }
+  }
+
   return (
     <div>
       <ul>
         {props.posts.map(post => (
           <li key={post.id}>
-            {post.body}
+            <img src={composeImageUrl(post.body)} />
           </li>
         ))}
       </ul>
