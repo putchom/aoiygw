@@ -31,6 +31,7 @@
     "react": "^17.0.2",
     "react-dev-utils": "^11.0.4",
     "react-dom": "^17.0.2",
-    "react-figma-plugin-ds": "^2.3.0"
+    "react-figma-plugin-ds": "^2.3.0",
+    "react-masonry-css": "^1.0.16"
   }
 }
