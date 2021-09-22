@@ -11,10 +11,10 @@ const ErrorView: React.VFC<Props> = (props) => {
     <div className={styles.container}>
       <Text
         className={styles.stack}
-        size="large"
+        size='large'
       >
         <Icon
-          name="warning"
+          name='warning'
         />
         {props.message}
       </Text>
