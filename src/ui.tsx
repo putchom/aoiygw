@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { useState, useEffect } from 'react'
 import * as ReactDOM from 'react-dom'
-import ErrorView from './ErrorView'
-import PostImageGridView from './PostImageGridView'
-import LoadingView from './LoadingView'
+import ErrorView from './views/ErrorView'
+import PostImageGridView from './views/PostImageGridView'
+import LoadingView from './views/LoadingView'
 import './ui.scss'
 
 const App: React.VFC = () => {

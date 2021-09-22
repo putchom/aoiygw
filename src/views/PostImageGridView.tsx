@@ -1,11 +1,7 @@
 import * as React from 'react'
 import Masonry from 'react-masonry-css'
+import Post from '../models/Post'
 import styles from './PostImageGridView.module.scss'
-
-interface Post {
-  id: string
-  body: string
-}
 
 interface Props {
   posts: Post[]
