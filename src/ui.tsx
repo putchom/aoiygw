@@ -11,6 +11,7 @@ const App: React.VFC = () => {
   const [error, setError] = useState(null)
   const [isLoaded, setIsLoaded] = useState(false)
   const [posts, setPosts] = useState([])
+  const [offset, setOffset] = useState(20)
 
   useEffect(() => {
     fetch(`https://api.tumblr.com/v2/blog/yagawaaoi.tumblr.com/posts?api_key=${apiKey}`)
@@ -27,12 +28,35 @@ const App: React.VFC = () => {
       )
   }, [])
 
+  const handleClickMoreButton = () => {
+    fetch(`https://api.tumblr.com/v2/blog/yagawaaoi.tumblr.com/posts?api_key=${apiKey}&offset=${offset}`)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          setOffset(offset + result.response.posts.length)
+          setPosts([...posts, ...result.response.posts])
+        },
+        (error) => {
+          setError(error)
+        }
+      )
+  }
+
   if (error) {
-    return <ErrorView message={error.message} />
+    return (
+      <ErrorView message={error.message} />
+    )
   } else if (!isLoaded) {
-    return <LoadingView />
+    return (
+      <LoadingView />
+    )
   } else {
-    return <GridView posts={posts} />
+    return (
+      <GridView
+        handleClickMoreButton={handleClickMoreButton}
+        posts={posts}
+      />
+    )
   }
 }
 

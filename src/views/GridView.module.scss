@@ -18,3 +18,11 @@ $grid-gutter-size: 0.5rem;
     margin-bottom: $grid-gutter-size;
   }
 }
+
+.buttonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
