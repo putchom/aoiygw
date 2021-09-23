@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useState, useEffect } from 'react'
 import * as ReactDOM from 'react-dom'
 import ErrorView from './views/ErrorView'
-import PostImageGridView from './views/PostImageGridView'
+import GridView from './views/GridView'
 import LoadingView from './views/LoadingView'
 import apiKey from './api_key.txt'
 import './ui.scss'
@@ -32,7 +32,7 @@ const App: React.VFC = () => {
   } else if (!isLoaded) {
     return <LoadingView />
   } else {
-    return <PostImageGridView posts={posts} />
+    return <GridView posts={posts} />
   }
 }
 

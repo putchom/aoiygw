@@ -4,22 +4,17 @@ $grid-gutter-size: 0.5rem;
   padding: $grid-gutter-size;
 }
 
-.grid {
+.row {
   display: flex;
   margin-left: -1 * $grid-gutter-size;
   width: auto;
 }
 
-.column {
+.col {
   padding-left: $grid-gutter-size;
   background-clip: padding-box;
 
-  & > div {
+  & > * {
     margin-bottom: $grid-gutter-size;
   }
-}
-
-.image {
-  width: 100%;
-  display: block;
 }
