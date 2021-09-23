@@ -1,20 +1,21 @@
 figma.showUI(__html__, { width: 440, height: 640 });
 
 figma.ui.onmessage = (msg) => {
-  if (msg.type === "create-rectangles") {
-    const nodes = [];
-
-    for (let i = 0; i < msg.count; i++) {
-      const rect = figma.createRectangle();
-      rect.x = i * 150;
-      rect.fills = [{ type: "SOLID", color: { r: 1, g: 0.5, b: 0 } }];
-      figma.currentPage.appendChild(rect);
-      nodes.push(rect);
+  if (msg.type === 'fill-node') {
+    const replaceImages = (
+      node: any,
+      arrayBuffer: Uint8Array
+    ) => {
+      const newFills = []
+      for (const paint of node.fills) {
+        const newPaint = JSON.parse(JSON.stringify(paint))
+        newPaint.imageHash = figma.createImage(arrayBuffer).hash
+        newFills.push(newPaint)
+      }
+      node.fills = newFills
     }
 
-    figma.currentPage.selection = nodes;
-    figma.viewport.scrollAndZoomIntoView(nodes);
+    const selected = figma.currentPage.selection[0] as GeometryMixin
+    replaceImages(selected, msg.arrayBuffer)
   }
-
-  figma.closePlugin();
 };
